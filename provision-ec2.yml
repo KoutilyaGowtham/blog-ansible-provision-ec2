@@ -6,6 +6,6 @@
    become: true
    become_method: sudo
    pre_tasks:
-    - include_vars: ec2_vars/{{type}}.yml
+    - include_vars: ec2_vars.yml
    roles:
     - provision-ec2 
