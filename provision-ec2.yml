@@ -1,8 +1,10 @@
 ---
- - hosts: localhost
-   connection: local
+ - hosts: local
+   connection: ssh
    gather_facts: false
-   user: root
+   remote_user: user
+   become: true
+   become_method: sudo
    pre_tasks:
     - include_vars: ec2_vars/{{type}}.yml
    roles:
